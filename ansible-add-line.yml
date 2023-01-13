@@ -3,8 +3,10 @@
   hosts: all
   become: yes
   tasks:
-    -
-      name: Update entry into /tmp/textfile.txt 20230113
+    - name: Update entry into /tmp/textfile.txt 20230113
       lineinfile:
        path: /tmp/textfile.txt
        line: 'nameserver 10.1.250.10'
+
+    - debug:
+        msg: "System {{ inventory_hostname }}. Your CRQ is: {{ var_crq }}"
