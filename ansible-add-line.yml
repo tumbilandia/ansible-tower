@@ -9,4 +9,4 @@
        line: 'nameserver 10.1.250.10'
 
     - debug:
-        msg: "System {{ inventory_hostname }}. Your CRQ:{{ var_crq }} *"
+        msg: "System {{ inventory_hostname }}. Your #CRQ:{{ var_crq }} #"
