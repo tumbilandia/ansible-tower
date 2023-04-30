@@ -1,0 +1,10 @@
+---
+- name: Update file on Windows host
+  hosts: all
+  tasks:
+    - name: Copy file to remote host
+      win_copy:
+        src: d:\_download\_history.diz
+        dest: d:\temp\x\x\_history.diz
+        force: yes
+        # Set other attributes as needed, such as file permissions
