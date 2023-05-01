@@ -4,12 +4,12 @@
   gather_facts: no
 
   vars:
-    source_path: "d:\\_download\\_history.diz"
-    dest_path: "d:\\temp\\x\\x\\_history.diz"
+    source_path: "d:\_download\_history.diz"
+    dest_path: "d:\temp\x\x\"
     
   tasks:
     - name: Copy file
-      win_copy:
+      ansible.windows.win_copy:
         src: "{{ source_path }}"
         dest: "{{ dest_path }}"
         #force: yes
