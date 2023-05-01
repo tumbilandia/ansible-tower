@@ -3,20 +3,8 @@
   hosts: all
   gather_facts: no
 
-  vars:
-    source_path: "d:\\_win10_tricks.diz"
-    dest_path: "d:\\_win10_tricksx.diz"
-
   tasks:
     - name: Copy file
-      win_copy:
-        src: "{{ source_path }}"
-        dest: "{{ dest_path }}"
-        #force: yes
-      become: yes
-      become_method: runas
-      become_flags: logon_type=new_credentials logon_flags=netcredentials_only
-      vars:
-        ansible_become_user: rra
-        ansible_become_pass: 0000
-      
+      win_file:
+        path: d:\temp\foo.conf
+        state: touch
