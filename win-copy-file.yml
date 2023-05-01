@@ -7,5 +7,5 @@
     - name: Copy file
       ansible.windows.win_copy:
         src: "d:\_download\_history.diz"
-        dest: "d:\temp\x\x\_history.diz"
+        dest: "d:\temp\x\_history.diz"
         #force: yes
