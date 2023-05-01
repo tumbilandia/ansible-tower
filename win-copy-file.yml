@@ -4,8 +4,8 @@
   gather_facts: no
 
   vars:
-    source_path: "d:\\_download\\_history.diz"
-    dest_path: "d:\\temp\\x\\_history.diz"
+    source_path: "d:\\_win10_tricks.diz"
+    dest_path: "d:\\_win10_tricksx.diz"
 
   tasks:
     - name: Copy file
