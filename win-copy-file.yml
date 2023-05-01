@@ -1,6 +1,6 @@
 ---
 - name: Copy file to the same Windows host
-  hosts: windows_host
+  hosts: all
   gather_facts: no
 
   vars:
