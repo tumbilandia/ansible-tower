@@ -12,3 +12,4 @@
       win_copy:
         src: "{{ source_path }}"
         dest: "{{ dest_path }}"
+        #force: yes
