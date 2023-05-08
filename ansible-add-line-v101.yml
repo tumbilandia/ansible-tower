@@ -1,4 +1,4 @@
--
+---
   name: Adding new line in /etc/reslove.conf lineinfile
   hosts: all
   become: yes
@@ -15,3 +15,10 @@
       ansible.builtin.user:
         name: "{{ user_name }}"
         group: "{{ group_name }}"
+
+    - name: Show content of /var/log/secure
+      command: 'tail /var/log/secure'
+      register: cat2        
+    
+    - debug:
+       var: cat2
