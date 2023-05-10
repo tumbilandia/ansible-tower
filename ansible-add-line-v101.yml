@@ -1,14 +1,17 @@
 ---
-- name: Adding new line in /etc/reslove.conf lineinfile
+- name: Example Playbook
   hosts: all
-  become: yes
   tasks:
     - name: Update entry into /tmp/textfile.txt 20230113
       lineinfile:
         path: /tmp/report/textfile.txt
         line: 'nameserver 10.1.250.10'
+      register: file_created
+
+    - name: Print debug message
       debug:
-        msg: "System {{ inventory_hostname }}. Your #CRQ:{{ var_crq }} #"
+        var: file_created
+        msg: "System: {{ inventory_hostname }}"
 
     - name: Add a variable user and variable primary group
       ansible.builtin.user:
@@ -17,13 +20,16 @@
 
     - name: Show content of /var/log/secure
       command: 'tail /var/log/secure'
-      register: cat2        
+      register: cat1
     
-    - name: Print debug message
+    - name: Print debug message -> cat1
       debug:
-        var: cat2
+        var: cat1
+    
     - name: cat /etc/redhat-release
       command: 'cat /etc/redhat-release'
-      register: cat1
-    - debug:
-      var: cat1
+      register: cat2
+    
+    - name: Print debug message -> cat2
+      debug:
+        var: cat2
