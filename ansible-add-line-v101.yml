@@ -4,6 +4,7 @@
     become: yes
   
     tasks:
+    
       - name: Update entry into /tmp/textfile.txt 20230113
         lineinfile:
           path: /tmp/report/textfile.txt
