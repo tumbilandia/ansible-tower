@@ -1,4 +1,6 @@
 ---
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html#about-playbooks
+
 - name: Update web servers
   hosts: webservers
   remote_user: root
