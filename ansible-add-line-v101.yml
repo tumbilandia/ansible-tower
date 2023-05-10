@@ -1,30 +1,29 @@
 ---
-  name: Adding new line in /etc/reslove.conf lineinfile
-  hosts: all
-  become: yes
+  - name: Adding new line in /etc/reslove.conf lineinfile
+    hosts: all
+    become: yes
   
-  tasks:
-
-    - name: Update entry into /tmp/textfile.txt 20230113
-      lineinfile:
-       path: /tmp/report/textfile.txt
-       line: 'nameserver 10.1.250.10'
-    - debug:
+    tasks:
+      - name: Update entry into /tmp/textfile.txt 20230113
+        lineinfile:
+          path: /tmp/report/textfile.txt
+          line: 'nameserver 10.1.250.10'
+      - debug:
         msg: "System {{ inventory_hostname }}. Your #CRQ:{{ var_crq }} #"
 
-    - name: Add a variable user and variable primary group
-      ansible.builtin.user:
-        name: "{{ user_name }}"
-        group: "{{ group_name }}"
+      - name: Add a variable user and variable primary group
+        ansible.builtin.user:
+          name: "{{ user_name }}"
+          group: "{{ group_name }}"
 
-    - name: Show content of /var/log/secure
-      command: 'tail /var/log/secure'
-      register: cat2        
-    - debug:
-       var: cat2
+      - name: Show content of /var/log/secure
+        command: 'tail /var/log/secure'
+        register: cat2        
+      - debug:
+        var: cat2
 
-    - name: Show content of /etc/redhat-release
-      command: 'cat /etc/redhat-release'
-      register: cat1
-    - debug:
-       var: cat1      
+      - name: cat /etc/redhat-release
+        command: 'cat /etc/redhat-release'
+        register: cat1
+      - debug:
+        var: cat1
