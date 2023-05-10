@@ -8,9 +8,12 @@
         line: 'nameserver 10.1.250.10'
       register: file_created
 
-    - name: Print debug message
+    - name: Print debug message -> textfile.txt modify
       debug:
         var: file_created
+    
+    - name: Print debug -> inventory_hostname
+      debug:
         msg: "System: {{ inventory_hostname }}"
 
     - name: Add a variable user and variable primary group
