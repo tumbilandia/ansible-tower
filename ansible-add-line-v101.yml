@@ -8,7 +8,6 @@
       lineinfile:
        path: /tmp/report/textfile.txt
        line: 'nameserver 10.1.250.10'
-
     - debug:
         msg: "System {{ inventory_hostname }}. Your #CRQ:{{ var_crq }} #"
 
@@ -20,6 +19,12 @@
     - name: Show content of /var/log/secure
       command: 'tail /var/log/secure'
       register: cat2        
-    
     - debug:
        var: cat2
+
+  tasks:
+    - name: cat /etc/redhat-release
+      command: 'cat /etc/redhat-release'
+      register: cat1
+    - debug:
+       var: cat1      
