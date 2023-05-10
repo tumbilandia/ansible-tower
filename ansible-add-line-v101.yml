@@ -3,7 +3,7 @@
     hosts: all
     become: yes
     tasks:
-      - name: Update entry into /tmp/textfile.txt 20230113
+      - name: Update textfile
         lineinfile:
           path: /tmp/report/textfile.txt
           line: 'nameserver 10.1.250.10'
