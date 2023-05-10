@@ -4,6 +4,7 @@
   become: yes
   
   tasks:
+
     - name: Update entry into /tmp/textfile.txt 20230113
       lineinfile:
        path: /tmp/report/textfile.txt
@@ -22,8 +23,7 @@
     - debug:
        var: cat2
 
-  tasks:
-    - name: cat /etc/redhat-release
+    - name: Show content of /etc/redhat-release
       command: 'cat /etc/redhat-release'
       register: cat1
     - debug:
