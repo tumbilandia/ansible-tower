@@ -1,6 +1,7 @@
 ---
 - name: Example Playbook
   hosts: all
+  become: yes
   tasks:
     - name: Update entry into /tmp/textfile.txt 20230113
       lineinfile:
