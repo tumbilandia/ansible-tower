@@ -2,6 +2,7 @@
   name: Adding new line in /etc/reslove.conf lineinfile
   hosts: all
   become: yes
+  
   tasks:
     - name: Update entry into /tmp/textfile.txt 20230113
       lineinfile:
